@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #08090D;
+  color: #E8E9EF;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.card {
+  background: #111217;
+  border: 1px solid #1E1F28;
+  border-radius: 14px;
+}
+
+.recharts-tooltip-wrapper { outline: none; }
+
+.custom-tooltip {
+  background: #1A1B24;
+  border: 1px solid #2A2B38;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #E8E9EF;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2A2B38; border-radius: 4px; }
