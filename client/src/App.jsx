@@ -15,8 +15,11 @@ const f = {
   delta: (a,b) => (!b||+b===0)?null:((+a-+b)/Math.abs(+b))*100,
 };
 
+const API_BASE = import.meta.env.VITE_API_URL || "";
+
 const get = async (path, params={}) => {
-  const u = new URL("/api/"+path, window.location.origin);
+  const base = API_BASE ? API_BASE.replace(/\/$/, "") + "/api/" + path : "/api/" + path;
+  const u = new URL(base, window.location.origin);
   Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));
   const r = await fetch(u.toString());
   if(!r.ok) throw new Error("API "+r.status);

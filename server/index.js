@@ -5,7 +5,7 @@ const Anthropic = require("@anthropic-ai/sdk");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const pool = mysql.createPool({
