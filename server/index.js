@@ -9,11 +9,11 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: "mainline.proxy.rlwy.net",
-  port: 47875,
-  database: "railway",
-  user: "root",
-  password: "ayIdaqoMxdNKlpOyFUbXhTBZMolSmpJO",
+  host: process.env.DB_HOST || "127.0.0.1",
+  port: parseInt(process.env.DB_PORT) || 3307,
+  database: process.env.DB_NAME || "jonnyrosero_improvado",
+  user: process.env.DB_USER || "jonnyrosero_jonny",
+  password: process.env.DB_PASSWORD,
   waitForConnections: true,
   connectionLimit: 10,
 });
