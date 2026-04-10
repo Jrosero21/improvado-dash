@@ -130,11 +130,11 @@ export default function App() {
     setLoading(true); setErr(null);
     try {
       const [ov,pv,pl,ts,ca,tk,gg,fb,cl] = await Promise.all([
-        get("overview", filters), get("overview/prev", { days }),
+        get("overview", filters), get("overview", { days, prev: 1 }),
         get("platforms", filters), get("timeseries", filters),
         get("campaigns", { ...filters, limit:10 }),
         get("tiktok-funnel", { days }), get("google-quality", { days }),
-        get("facebook-engagement", { days }), get("campaigns/list", {}),
+        get("facebook-engagement", { days }), get("campaigns", { list: 1 }),
       ]);
       setD({ov,pv,pl,ts,ca,tk,gg,fb});
       setCampaignList(cl);

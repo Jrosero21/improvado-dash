@@ -1,0 +1,8 @@
+{
+  "name": "improvado-dash",
+  "version": "1.0.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.87.0",
+    "mysql2": "^3.21.0"
+  }
+}
